@@ -8,6 +8,7 @@ from heart import train_model, predict_heart_disease
 from werkzeug.utils import secure_filename
 import numpy as np
 from keras.preprocessing import image
+
 from tensorflow.keras.models import load_model 
 
 from liver import train_model, predict_liver_disease
