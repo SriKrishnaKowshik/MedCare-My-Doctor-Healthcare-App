@@ -71,6 +71,6 @@ http://127.0.0.1:5000/
 
 - **Python 3.x**
 - **Flask**
-- **TensorFlow / Keras** – Brain tumor model
-- **scikit-learn** – Disease prediction models
-- **HTML/CSS** – Frontend
+- **TensorFlow / Keras** 
+- **scikit-learn** 
+- **HTML/CSS**
