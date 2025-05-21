@@ -38,9 +38,11 @@ This is a Flask-based web application that predicts various diseases using machi
    ```bash
    pip install -r requirements.txt
 
-## Run the Flask app:
-   python app.py
-   
+## Run the Flask app
+
+```bash
+python app.py
+
 Open your browser and visit http://127.0.0.1:5000/ to use the application.
 
 ## Technologies Used
