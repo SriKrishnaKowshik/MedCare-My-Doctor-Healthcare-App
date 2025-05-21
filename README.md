@@ -1,4 +1,4 @@
-# Health Care Disease Prediction Web Application
+# MedCare: My Doctor Healthcare App
 
 This is a Flask-based web application that predicts various diseases using machine learning models. The project includes modules for:
 
