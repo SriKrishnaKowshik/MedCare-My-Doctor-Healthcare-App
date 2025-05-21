@@ -2,7 +2,7 @@
 
 This is a Flask-based web application that predicts various diseases using machine learning models. The project includes modules for:
 
-- **Kidney Disease Prediction (KYD)**
+- **Know Disease Prediction (KYD)**
 - **Brain Tumor Detection (KYH)**
 - **Heart Disease Prediction**
 - **Liver Disease Prediction**
