@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Health Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 800px;
+        }
+        .prediction-result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .image-display {
+            margin-top: 20px;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .form-control-file {
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .result-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .home-link {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            font-size: 1.3em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="/kyh_diseases" class="home-link"><i class="fas fa-home"></i> Home</a>
+    <div class="card p-4">
+        <h1 class="text-center mb-4">
+            <i class="fas fa-brain result-icon"></i> Brain Health Prediction
+        </h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">
+                    <i class="fas fa-file-upload"></i> Upload Brain Image:
+                </label>
+                <input type="file" class="form-control-file" id="file" name="file" required>
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">
+                <i class="fas fa-search"></i> Predict
+            </button>
+        </form>
+
+        {% if image_name %}
+        <div class="image-display text-center">
+            <h2>Uploaded Image:</h2>
+            <img src="../images/{{ image_name }}" height="100px" class="image-responsive align-center" style="display: block; margin-left: auto; margin-right: auto; width: 25%;">
+        </div>
+        <div class="prediction-result text-center">
+            {% if predvalue %}
+                <p class="text-success">
+                    <i class="fas fa-check-circle"></i> Prediction: The image indicates a presence of a tumor.
+                </p>
+            {% else %}
+                <p class="text-danger">
+                    <i class="fas fa-times-circle"></i> Prediction: The image does not indicate a presence of a tumor.
+                </p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

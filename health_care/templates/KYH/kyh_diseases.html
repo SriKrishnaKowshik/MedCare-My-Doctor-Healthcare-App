@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Systems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 5px solid #0056b3;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        header .title-icon {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 2.8em;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 20px;
+            max-width: 800px; /* Adjust to fit your design */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .system-button {
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin: 10px;
+            font-size: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 250px; /* Adjusted to ensure all buttons are the same size */
+            height: 100px; /* Adjusted to ensure all buttons are the same height */
+        }
+
+        .system-button i, .system-button img {
+            margin-right: 15px;
+            font-size: 2em; /* Increased icon size */
+        }
+
+        .button-heart { background-color: #e57373; }
+        .button-lungs { background-color: #64b5f6; }
+        .button-liver { background-color: #fdd835; }
+        .button-kidney { background-color: #4db6ac; }
+        .button-brain { background-color: #9575cd; }
+        .button-digestive { background-color: #ff7043; }
+
+        .system-button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .system-button:focus {
+            outline: none;
+        }
+
+        .system-button img {
+            height: 1.1em; /* Adjust image size */
+        }
+
+        .system-button.button-kidney img {
+            height: 1.3em; /* Adjust image size */
+            margin-right: 2px;
+        }
+
+        .button-link {
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .home-link {
+            position: absolute;
+            top: 120px;
+            left: 20px;
+            font-size: 1.3em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <i class="fas fa-heartbeat title-icon"></i>
+        <h1>Health Systems</h1>
+    </header>
+    <main>
+        <a href="/" class="home-link"><i class="fas fa-home"></i> Home</a>
+
+        <div class="button-container">
+            <div class="button-row">
+                <a href="/upload" class="button-link">
+                    <button class="system-button button-brain" id="brain">
+                        <i class="fas fa-brain"></i> Brain & Nerves
+                    </button>
+                </a>
+                <a href="/heart_predict" class="button-link">
+                    <button class="system-button button-heart" id="heart">
+                        <img src="static/heart.png" alt="heart"> Heart
+                    </button>
+                </a>
+                <a href="/liver" class="button-link">
+                    <button class="system-button button-liver" id="liver">
+                        <img src="static/liver.png" alt="Liver"> Liver
+                    </button>
+                </a>
+            </div>
+            <div class="button-row">
+                <a href="/lung_predict" class="button-link">
+                    <button class="system-button button-lungs" id="lungs">
+                        <i class="fas fa-lungs"></i> Lungs
+                    </button>
+                </a>
+                <a href="/kidney" class="button-link">
+                    <button class="system-button button-kidney" id="kidney">
+                        <img src="static/kidney.png" alt="Kidney"> Kidney
+                    </button>
+                </a>
+                <a href="/digestive" class="button-link">
+                    <button class="system-button button-digestive" id="digestive">
+                        <img src="static/digestive.png" alt="Digestive System"> Digestive System
+                    </button>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

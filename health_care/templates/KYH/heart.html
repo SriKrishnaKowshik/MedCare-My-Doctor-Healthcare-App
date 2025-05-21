@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .home-link {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            font-size: 1.3em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/kyh_diseases" class="home-link"><i class="fas fa-home"></i> Home</a>
+        <h1 class="text-center"><i class="fas fa-heartbeat"></i> Heart Disease Prediction</h1>
+        
+        <!-- Display Result Section -->
+        {% if result %}
+            <div class="result">
+                <h2>Prediction Result</h2>
+                <p>{{ result }}</p>
+            </div>
+        {% endif %}
+        
+        <!-- Form Section -->
+        <form action="/heart_predict" method="post">
+            <div class="form-group">
+                <label for="male">Gender:</label>
+                <input type="text" id="male" name="male" class="form-control" placeholder="1 for male, 0 for female" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" class="form-control" placeholder="e.g., 30" required>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Education Level:</label>
+                <input type="text" id="education" name="education" class="form-control" placeholder="e.g., 12" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currentSmoker">Current Smoker:</label>
+                <input type="text" id="currentSmoker" name="currentSmoker" class="form-control" placeholder="1 for yes, 0 for no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cigsPerDay">Cigarettes Per Day:</label>
+                <input type="text" id="cigsPerDay" name="cigsPerDay" class="form-control" placeholder="e.g., 5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="BPMeds">Blood Pressure Medication:</label>
+                <input type="text" id="BPMeds" name="BPMeds" class="form-control" placeholder="1 for yes, 0 for no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prevalentStroke">Prevalent Stroke:</label>
+                <input type="text" id="prevalentStroke" name="prevalentStroke" class="form-control" placeholder="1 for yes, 0 for no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prevalentHyp">Prevalent Hypertension:</label>
+                <input type="text" id="prevalentHyp" name="prevalentHyp" class="form-control" placeholder="1 for yes, 0 for no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diabetes">Diabetes:</label>
+                <input type="text" id="diabetes" name="diabetes" class="form-control" placeholder="1 for yes, 0 for no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="totChol">Total Cholesterol:</label>
+                <input type="text" id="totChol" name="totChol" class="form-control" placeholder="< 200 mg/dL is considered normal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sysBP">Systolic Blood Pressure:</label>
+                <input type="text" id="sysBP" name="sysBP" class="form-control" placeholder="< 120 mmHg is considered normal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="diaBP">Diastolic Blood Pressure:</label>
+                <input type="text" id="diaBP" name="diaBP" class="form-control" placeholder="< 80 mmHg is considered normal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="BMI">Body Mass Index:</label>
+                <input type="text" id="BMI" name="BMI" class="form-control" placeholder="18.5 - 24.9 is considered normal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="heartRate">Heart Rate:</label>
+                <input type="text" id="heartRate" name="heartRate" class="form-control" placeholder="60-100 bpm is considered normal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="glucose">Glucose Level:</label>
+                <input type="text" id="glucose" name="glucose" class="form-control" placeholder="< 100 mg/dL is considered normal" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-search"></i> Predict</button>
+        </form>
+    </div>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

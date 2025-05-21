@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Care Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #e9ecef;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            position: relative; /* Relative positioning for the chatbot */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: 40px;
+            color: #343a40;
+        }
+
+        .title h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #007bff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+
+        .title h2 {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            padding: 20px 40px;
+            margin: 15px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-know-disease {
+            background-color: #007bff;
+        }
+
+        .btn-know-health {
+            background-color: #28a745;
+        }
+
+        .btn-request-appointment {
+            background-color: #dc3545;
+        }
+
+        .btn-custom i {
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 5px; /* Reduced padding */
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            font-size: 0.9rem; /* Reduced font size */
+        }
+
+        footer p {
+            margin: 0; /* No margin */
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tidio Chatbot Styles */
+        .tidio-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tidio-chat-widget:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Welcome to My Doctor App</h1>
+            <h2>An AI Health Care Center</h2>
+        </div>
+        <a href="/kyd" class="btn btn-custom btn-know-disease">
+            <i class="fas fa-disease"></i> Know Your Disease
+        </a>
+        <a href="/kyh_diseases" class="btn btn-custom btn-know-health">
+            <i class="fas fa-heartbeat"></i> Know Your Health
+        </a>
+        <a href="/request_appointment" class="btn btn-custom btn-request-appointment">
+            <i class="fas fa-calendar-plus"></i> Request Appointment
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Health Care Center. All rights reserved.</p>
+        <p>
+            <a href="/about">About Us</a> | 
+            <a href="/contact">Contact Us</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha384-eNwF0QJTF1rIQ4b5IgIdfG9q5e8IkQTJ6s3f2Tt5Wk4T2DuoX9SADU2t6cAfFQ3H" crossorigin="anonymous"></script>
+
+    <script src="//code.tidio.co/7aatj6mgiyuth9otnsqi1gzhch1dol2i.js" async></script>
+
+</body>
+</html>

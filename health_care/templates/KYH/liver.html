@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn {
+            font-size: 1.1rem;
+        }
+        .result {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        .home-link {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            font-size: 1.3em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .home-link:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <a href="/kyh_diseases" class="home-link"><i class="fas fa-home"></i> Home</a>
+        <h1 class="text-center">
+            <i class="fas fa-liver"></i> <span style="margin-left: 10px;">Liver Disease Prediction</span>
+        </h1>
+        <form method="POST" action="/liver">
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" name="age" placeholder="Enter your age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender (Male=1, Female=0)</label>
+                <input type="number" class="form-control" name="gender" placeholder="1 for Male, 0 for Female" required>
+            </div>
+            <div class="form-group">
+                <label for="total_bilirubin">Total Bilirubin</label>
+                <input type="number" step="any" class="form-control" name="total_bilirubin" placeholder="Enter total bilirubin level" required>
+            </div>
+            <div class="form-group">
+                <label for="direct_bilirubin">Direct Bilirubin</label>
+                <input type="number" step="any" class="form-control" name="direct_bilirubin" placeholder="Enter direct bilirubin level" required>
+            </div>
+            <div class="form-group">
+                <label for="alkphos">Alkaline Phosphotase (alkphos)</label>
+                <input type="number" class="form-control" name="alkphos" placeholder="Enter alkaline phosphatase level" required>
+            </div>
+            <div class="form-group">
+                <label for="sgpt">Alanine Aminotransferase (sgpt)</label>
+                <input type="number" class="form-control" name="sgpt" placeholder="Enter sgpt level" required>
+            </div>
+            <div class="form-group">
+                <label for="sgot">Aspartate Aminotransferase (sgot)</label>
+                <input type="number" class="form-control" name="sgot" placeholder="Enter sgot level" required>
+            </div>
+            <div class="form-group">
+                <label for="total_proteins">Total Proteins</label>
+                <input type="number" step="any" class="form-control" name="total_proteins" placeholder="Enter total proteins level" required>
+            </div>
+            <div class="form-group">
+                <label for="albumin">Albumin</label>
+                <input type="number" step="any" class="form-control" name="albumin" placeholder="Enter albumin level" required>
+            </div>
+            <div class="form-group">
+                <label for="albumin_and_globulin_ratio">Albumin and Globulin Ratio</label>
+                <input type="number" step="any" class="form-control" name="albumin_and_globulin_ratio" placeholder="Enter albumin and globulin ratio" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-hands-helping" style="margin-right: 5px;"></i> Predict
+            </button>
+        </form>
+
+        {% if result %}
+        <div class="result text-center">
+            <h3>{{ result }}</h3>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
