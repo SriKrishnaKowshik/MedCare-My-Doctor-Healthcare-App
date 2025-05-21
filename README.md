@@ -6,7 +6,7 @@ This is a Flask-based web application that predicts various diseases using machi
 - **Brain Tumor Detection (KYH)**
 - **Heart Disease Prediction**
 - **Liver Disease Prediction**
-- *(Optional)* Lung Cancer Prediction (commented out in code)
+- *Can be developed in future
 
 ---
 
@@ -37,4 +37,18 @@ This is a Flask-based web application that predicts various diseases using machi
 2. Install required dependencies:
    ```bash
    pip install -r requirements.txt
+
+## Run the Flask app:
+   python app.py
+   
+Open your browser and visit http://127.0.0.1:5000/ to use the application.
+
+## Technologies Used
+
+- Python 3.x
+- Flask
+- TensorFlow / Keras (for brain tumor detection model)
+- scikit-learn (for disease prediction models)
+- HTML/CSS (for frontend)
+
 
